@@ -1,6 +1,9 @@
 .footer {
-  width: 104px;
-  height: 16px;
+  padding: 60px 0;
   display: flex;
   justify-content: center;
+}
+
+.footer__copyright {
+  margin: 0;
 }
