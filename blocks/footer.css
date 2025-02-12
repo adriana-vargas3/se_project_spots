@@ -2,6 +2,7 @@
   padding: 60px 0;
   display: flex;
   justify-content: center;
+  color: rgba(33, 33, 33, 0.7);
 }
 
 .footer__copyright {
@@ -9,5 +10,4 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1;
-  color: rgba(33, 33, 33, 0.7);
 }
