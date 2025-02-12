@@ -14,11 +14,15 @@
 }
 
 .card__title {
+  max-width: 353px;
   margin: 0;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   color: rgba(33, 33, 33, 1);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__like-button {
@@ -41,7 +45,7 @@
   }
 
   .card__title {
+    max-width: 257px;
     font-size: 16px;
-    line-height: 1;
   }
 }
