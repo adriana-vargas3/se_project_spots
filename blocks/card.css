@@ -33,6 +33,12 @@
   border: none;
   background-color: transparent;
   opacity: 40%;
+  transition: 2s, ease-in-out, 1s;
+}
+
+.card__like-button:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
@@ -40,12 +46,9 @@
     height: 288px;
   }
 
-  .card__content {
-    height: 18px;
-  }
-
   .card__title {
     max-width: 257px;
     font-size: 16px;
+    line-height: 1;
   }
 }

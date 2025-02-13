@@ -16,6 +16,6 @@ This project is an interactive social media web application. Created using HTML 
 
 ![alt text](./images/demo/preview.png)
 
-**Deployed to GitHub**
+**Deployed to GitHub Pages**
 
 - [Link to this project](https://adriana-vargas3.github.io/se_project_spots/)
