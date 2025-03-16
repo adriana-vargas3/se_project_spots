@@ -50,6 +50,25 @@ function openModal() {
   editModal.classList.add("modal_opened");
 }
 
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
+
+function getCard(data) {
+  console.log(data);
+  const card = cardTemplate.content.querySelector(".card").cloneNode(true);
+
+  const cardName = card.querySelector(".card__title");
+  const cardImage = card.querySelector(".card__image");
+
+  cardName.textContent = data.name;
+  cardImage.textContent = data.link;
+
+  cardImage.setAttribute("src", cardImage.textContent);
+  cardImage.setAttribute("alt", cardName.textContent);
+
+  return card;
+}
+
 function closeModal() {
   editModal.classList.remove("modal_opened");
 }
@@ -64,3 +83,8 @@ function handleEditFormSubmit(event) {
 profileEditButton.addEventListener("click", openModal);
 editModalCloseButton.addEventListener("click", closeModal);
 editFormElement.addEventListener("submit", handleEditFormSubmit);
+
+for (let i = 0; i < initialCards.length; i++) {
+  const card = getCard(initialCards[i]);
+  cardsList.prepend(card);
+}
