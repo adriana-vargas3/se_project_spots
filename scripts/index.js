@@ -1,5 +1,3 @@
-const cardTemplate = document.querySelector("#card-template");
-const cardsList = document.querySelector(".cards__list");
 const initialCards = [
   {
     name: "Val Thorens",
@@ -34,82 +32,75 @@ const initialCards = [
 
 const editProfileButton = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editModalCloseButton = editProfileModal.querySelector(
+const editProfileCloseButton = editProfileModal.querySelector(
   ".modal__close-button"
 );
 const editProfileForm = editProfileModal.querySelector(".modal__form");
-const editModalNameInput = editProfileModal.querySelector(
+const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
-const editModalDescriptionInput = editProfileModal.querySelector(
+const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
-const newPostProfileButton = document.querySelector(".profile__add-button");
+const newPostButton = document.querySelector(".profile__new-post-button");
 const newPostModal = document.querySelector("#new-post-modal");
-const newPostModalCloseButton = newPostModal.querySelector(
-  ".modal__close-button"
-);
-const addCardFormElement = newPostModal.querySelector(".modal__form");
-const nameInput = newPostModal.querySelector("#post-caption-input");
-const linkInput = newPostModal.querySelector("#post-link-input");
+const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
+const newPostForm = newPostModal.querySelector(".modal__form");
+
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
-function getCard(data) {
-  console.log(data);
-  const card = cardTemplate.content.querySelector(".card").cloneNode(true);
-
-  const cardName = card.querySelector(".card__title");
-  const cardImage = card.querySelector(".card__image");
-
-  cardName.textContent = data.name;
-  cardImage.textContent = data.link;
-
-  cardImage.setAttribute("src", cardImage.textContent);
-  cardImage.setAttribute("alt", cardName.textContent);
-
-  return card;
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
 }
 
-for (let i = 0; i < initialCards.length; i++) {
-  const card = getCard(initialCards[i]);
-  cardsList.prepend(card);
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
 }
 
 editProfileButton.addEventListener("click", function () {
-  editModalNameInput.value = profileName.textContent;
-  editModalDescriptionInput.value = profileDescription.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  editProfileNameInput.value = profileName.textContent;
+  editProfileDescriptionInput.value = profileDescription.textContent;
+  openModal(editProfileModal);
 });
 
-editModalCloseButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+editProfileCloseButton.addEventListener("click", function () {
+  closeModal(editProfileModal);
 });
 
-newPostProfileButton.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+newPostButton.addEventListener("click", function () {
+  openModal(newPostModal);
 });
 
-newPostModalCloseButton.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+newPostCloseButton.addEventListener("click", function () {
+  closeModal(newPostModal);
 });
 
-function handleEditFormSubmit(event) {
+function handleEditProfileSubmit(event) {
   event.preventDefault();
-  profileName.textContent = editModalNameInput.value;
-  profileDescription.textContent = editModalDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  profileName.textContent = editProfileNameInput.value;
+  profileDescription.textContent = editProfileDescriptionInput.value;
+  closeModal(editProfileModal);
 }
 
-editProfileForm.addEventListener("submit", handleEditFormSubmit);
+editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+
+// Select the necessary form elements. You should select
+const addCardFormElement = newPostModal.querySelector(".modal__form");
+const captionInput = newPostModal.querySelector("#card-caption-input");
+const linkInput = newPostModal.querySelector("#card-link-input");
 
 function handleAddCardSubmit(event) {
   event.preventDefault();
-  console.log(nameInput.value);
-  console.log(linkInput.value);
-  newPostModal.classList.remove("modal_is-opened");
-  return;
+  console.log((captionInput.textContent = captionInput.value));
+  console.log((linkInput.textContent = linkInput.value));
+  closeModal(newPostModal);
 }
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+
+initialCards.forEach(function (item) {
+  console.log(item.name);
+  console.log(item.link);
+});

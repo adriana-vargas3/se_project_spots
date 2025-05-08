@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="___" />
     <meta name="author" content="Adriana Vargas" />
-    <meta name="keywords" content="___" />
+    <meta name="keywords" content="HTML, CSS, ___" />
     <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type= “image/x-icon” href="favicon.ico" />
     <title>Spots</title>
   </head>
   <body>
@@ -29,19 +29,80 @@
               Edit Profile
             </button>
           </div>
-          <button type="button" class="profile__add-button">New Post</button>
+          <button type="button" class="profile__new-post-button">
+            New Post
+          </button>
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
-            <template id="card-template">
-              <li class="card">
-                <img src="" alt="" class="card__image" />
-                <div class="card__content">
-                  <h2 class="card__title"></h2>
-                  <button type="button" class="card__like-button"></button>
-                </div>
-              </li>
-            </template>
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Val Thorens"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__title">Val Thorens</h2>
+                <button type="button" class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/2-photo-by-ceiline-from-pexels.jpg"
+                alt="Restaurant terrace"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__title">Restaurant terrace</h2>
+                <button type="button" class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
+                alt="An outdoor cafe"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__title">An outdoor cafe</h2>
+                <button type="button" class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
+                alt="A very long bridge, over the forest"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__title">
+                  A very long bridge, over the forest and through the trees
+                </h2>
+                <button type="button" class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+                alt="Tunnel with morning light"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__title">Tunnel with morning light</h2>
+                <button type="button" class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Mountain house"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__title">Mountain house</h2>
+                <button type="button" class="card__like-button"></button>
+              </div>
+            </li>
           </ul>
         </section>
       </main>
@@ -80,19 +141,19 @@
           <button type="button" class="modal__close-button"></button>
           <h2 class="modal__title">New Post</h2>
           <form name="new-post" class="modal__form">
-            <label for="post-link-input" class="modal__label"
+            <label for="card-link-input" class="modal__label"
               >Image link
               <input
-                id="post-link-input"
+                id="card-link-input"
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
               />
             </label>
-            <label for="post-caption-input" class="modal__label"
+            <label for="card-caption-input" class="modal__label"
               >Caption
               <input
-                id="post-caption-input"
+                id="card-caption-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
