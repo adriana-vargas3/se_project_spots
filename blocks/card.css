@@ -46,6 +46,7 @@
 
 .card__delete-button:hover {
   background-image: url(../images/delete-hover.svg);
+  cursor: pointer;
 }
 
 .card__like-button {
