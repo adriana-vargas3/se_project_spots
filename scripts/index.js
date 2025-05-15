@@ -79,7 +79,6 @@ function getCardElement(data) {
 
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
-    cardElement = null;
   });
 
   cardTitleEl.textContent = data.name;
@@ -142,6 +141,7 @@ newPostForm.addEventListener("submit", function (event) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
+  newPostForm.reset();
 });
 
 initialCards.forEach(function (item) {

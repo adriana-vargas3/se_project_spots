@@ -178,6 +178,7 @@
 
   .modal__image {
     max-width: unset;
+    max-height: unset;
     border-radius: 4px;
   }
 
